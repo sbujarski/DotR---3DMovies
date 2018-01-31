@@ -111,7 +111,7 @@ ThreeDPlot
 
 ggsave(ThreeDPlot, filename="ThreeDPlot.png", width = 8, height=7, dpi=500)
 
-
+write.csv(movies.sum, "Box Office Data.csv", row.names=F)
 
 
 
@@ -154,4 +154,5 @@ ThreeD.plot <- ggplot(Movies.3D, aes(x=RT, y=Gross.Inf.Mil, colour=Series)) +
   ggtitle("3D Movies") +
   DoR.Theme()
 ThreeD.plot
+
 

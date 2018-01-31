@@ -1,9 +1,7 @@
 #Data on the Rocks
-#May 2017
+#January 2018
 
 #3D Movies
-
-setwd("C:/Users/sbuja/Documents/Data on the Rocks/3D")
 
 #REQUIRED PACKAGES
 library(SpPack)

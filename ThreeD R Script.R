@@ -155,28 +155,3 @@ ThreeD.plot <- ggplot(Movies.3D, aes(x=RT, y=Gross.Inf.Mil, colour=Series)) +
   DoR.Theme()
 ThreeD.plot
 
-ggsave(Crime.plot, filename="Crime.plot.png", width = 8, height=7, dpi=500)
-
-#Data for Simile
-MaxData.R <- data.frame(Outcome=c("Murder.R", "Violent.R", "Property.R"), Max=rep(NA,3), Max.Year=rep(NA,3))
-#Historical
-MaxData.R$Max[1] <- max(Crime$Murder.R)
-MaxData.R$Max.Year[1] <- Crime$Year[which.max(Crime$Murder.R)]
-MaxData.R$Max[2] <- max(Crime$Violent.R)
-MaxData.R$Max.Year[2] <- Crime$Year[which.max(Crime$Violent.R)]
-MaxData.R$Max[3] <- max(Crime$Property.R)
-MaxData.R$Max.Year[3] <- Crime$Year[which.max(Crime$Property.R)]
-#Current
-MaxData.R$Current[1] <- Crime$Murder.R[46]
-MaxData.R$Current[2] <- Crime$Violent.R[46]
-MaxData.R$Current[3] <- Crime$Property.R[46]
-
-MaxData.R$Fraction <- MaxData.R$Current / MaxData.R$Max
-
-MaxData.R
-
-#geom_curve(aes(x=2016, xend=2016, y=MaxData2[3,2], yend=Crime$Property.C[46]), colour=colours[3], size=1, curvature=-.3) +
-
-
-#Data to export
-write.csv(Crime, file="Crime.csv", row.names=F)
